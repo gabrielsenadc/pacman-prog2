@@ -27,7 +27,7 @@ void LevaFinalTunel(tTunel* tunel, tPosicao* posicao){
         AtualizaPosicao(posicao, tunel->acesso2);
     }
     else{
-        AtualizaPosicao(posicao, tunel->acesso2);
+        AtualizaPosicao(posicao, tunel->acesso1);
     }
 }
 
