@@ -111,8 +111,9 @@ bool EncontrouParedeMapa(tMapa* mapa, tPosicao* posicao){
     return (ObtemItemMapa(mapa, posicao) == '#');
 }
 
-void AtualizaItemMapa(tMapa* mapa, tPosicao* posicao, char item){
+bool AtualizaItemMapa(tMapa* mapa, tPosicao* posicao, char item){
     mapa->grid[posicao->linha][posicao->coluna] = item;
+    return 1;
 }
 
 bool PossuiTunelMapa(tMapa* mapa){
