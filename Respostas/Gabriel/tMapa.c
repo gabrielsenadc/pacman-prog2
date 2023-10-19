@@ -15,10 +15,9 @@ tMapa* CriaMapa(const char* caminhoConfig){
     fscanf(pFile, "%d\n", &m->nMaximoMovimentos);
 
     int linha = 1, coluna = 0, fruta = 0, tunel = 0, pl1, pl2, pc1, pc2;
-    
-    m->grid = NULL;
     char c;
-    m->grid = realloc(m->grid, linha);
+    
+    m->grid = malloc(sizeof(char*));
     m->grid[0] = NULL;
     while(1){
         fscanf(pFile, "%c", &c);
@@ -26,14 +25,16 @@ tMapa* CriaMapa(const char* caminhoConfig){
             break;
         }
         coluna++;
-        m->grid[0] = realloc(m->grid[0], coluna);
+        m->grid[0] = realloc(m->grid[0], coluna * sizeof(char));
         m->grid[0][coluna - 1] = c;
     }
     while(fscanf(pFile, "%c", &c) == 1){
+        if(c == 'F'){
+            break;
+        }
         linha++;
-        m->grid = realloc(m->grid, linha);
-        m->grid[linha - 1] = NULL;
-        m->grid[linha - 1] = realloc(m->grid[linha - 1], coluna);
+        m->grid = realloc(m->grid, linha * sizeof(char*));
+        m->grid[linha - 1] = malloc(coluna * sizeof(char));
         m->grid[linha - 1][0] = c;
         for(int j = 1; j < coluna; j++){
             fscanf(pFile, "%c", &c);
@@ -131,6 +132,6 @@ void DesalocaMapa(tMapa* mapa){
         free(mapa->grid[i]);
     }
     free(mapa->grid);
-    free(mapa->tunel);
+    DesalocaTunel(mapa->tunel);
     free(mapa);
 }
