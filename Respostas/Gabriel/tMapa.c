@@ -12,60 +12,125 @@ tMapa* CriaMapa(const char* caminhoConfig){
     sprintf(mapa, "%s/mapa.txt", caminhoConfig);
     pFile = fopen(mapa, "r");
     tMapa* m = (tMapa*) malloc(sizeof(tMapa));
-    fscanf(mapa, "%d\n", &m->nMaximoMovimentos);
+    fscanf(pFile, "%d\n", &m->nMaximoMovimentos);
 
-    int linha = 1, coluna = 0, fruta = 0, tunel = 0;
+    int linha = 1, coluna = 0, fruta = 0, tunel = 0, pl1, pl2, pc1, pc2;
     
     m->grid = NULL;
     char c;
     m->grid = realloc(m->grid, linha);
     m->grid[0] = NULL;
     while(1){
-        fscanf(mapa, "%c", &c);
+        fscanf(pFile, "%c", &c);
         if(c == '\n'){
             break;
-        }
-        if(c == '*'){
-            fruta++;
-        }
-        if(c == '@'){
-            if(tunel == 0){
-                tPosicao* p1 = CriaPosicao(0, coluna - 1);
-                tunel++;
-            }
-            else{
-                tPosicao* p2 = CriaPosicao(0, coluna - 1);
-                tunel++;
-            }
         }
         coluna++;
         m->grid[0] = realloc(m->grid[0], coluna);
         m->grid[0][coluna - 1] = c;
     }
-    while(fscanf(mapa, "%c", &c) == 1){
+    while(fscanf(pFile, "%c", &c) == 1){
         linha++;
         m->grid = realloc(m->grid, linha);
-        m->grid[linha - 1] == NULL;
+        m->grid[linha - 1] = NULL;
         m->grid[linha - 1] = realloc(m->grid[linha - 1], coluna);
         m->grid[linha - 1][0] = c;
         for(int j = 1; j < coluna; j++){
-            fscanf(mapa, "%c", &c);
+            fscanf(pFile, "%c", &c);
             if(c == '*'){
             fruta++;
             }
             if(c == '@'){
                 if(tunel == 0){
-                    tPosicao* p1 = CriaPosicao(0, coluna - 1);
+                    pl1 = linha - 1;
+                    pc1 = j;
                     tunel++;
                 }
                 else{
-                    tPosicao* p2 = CriaPosicao(0, coluna - 1);
+                    pl2 = linha - 1;
+                    pc2 = j;
                 }
             }
             m->grid[linha - 1][j] = c;
         }
-        fscanf(mapa, "\n");
+        fscanf(pFile, "%*c");
     }
+    m->tunel = NULL;
+    if(tunel > 0){
+        m->tunel = CriaTunel(pl1, pc1, pl2, pc2);
+    }
+    m->nLinhas = linha;
+    m->nColunas = coluna;
+    m->nFrutasAtual = fruta;
+    fclose(pFile);
+    return m;
+}
 
-    
+tPosicao* ObtemPosicaoItemMapa(tMapa* mapa, char item){
+    tPosicao* p = NULL;
+    for(int i = 0; i < mapa->nLinhas; i++){
+        for(int j = 0; j < mapa->nColunas; j++){
+            if(mapa->grid[i][j] == item){
+                p = CriaPosicao(i, j);
+            }
+        }
+    }
+    return p;
+}
+
+tTunel* ObtemTunelMapa(tMapa* mapa){
+    return mapa->tunel;
+}
+
+char ObtemItemMapa(tMapa* mapa, tPosicao* posicao){
+    return mapa->grid[posicao->linha][posicao->coluna];
+}
+
+int ObtemNumeroLinhasMapa(tMapa* mapa){
+    return mapa->nLinhas;
+}
+
+int ObtemNumeroColunasMapa(tMapa* mapa){
+    return mapa->nColunas;
+}
+
+int ObtemQuantidadeFrutasIniciaisMapa(tMapa* mapa){
+    return mapa->nFrutasAtual;
+}
+
+int ObtemNumeroMaximoMovimentosMapa(tMapa* mapa){
+    return mapa->nMaximoMovimentos;
+}
+
+bool EncontrouComidaMapa(tMapa* mapa, tPosicao* posicao){
+    return (ObtemItemMapa(mapa, posicao) == '*');
+}
+
+bool EncontrouParedeMapa(tMapa* mapa, tPosicao* posicao){
+    return (ObtemItemMapa(mapa, posicao) == '#');
+}
+
+void AtualizaItemMapa(tMapa* mapa, tPosicao* posicao, char item){
+    mapa->grid[posicao->linha][posicao->coluna] = item;
+}
+
+bool PossuiTunelMapa(tMapa* mapa){
+    return (mapa->tunel != NULL);
+}
+
+bool AcessouTunelMapa(tMapa* mapa, tPosicao* posicao){
+    return (ObtemItemMapa(mapa, posicao) == '@');
+}
+
+void EntraTunelMapa(tMapa* mapa, tPosicao* posicao){
+    LevaFinalTunel(mapa->tunel, posicao);
+}
+
+void DesalocaMapa(tMapa* mapa){
+    for(int i = 0; i < mapa->nLinhas; i++){
+        free(mapa->grid[i]);
+    }
+    free(mapa->grid);
+    free(mapa->tunel);
+    free(mapa);
 }
