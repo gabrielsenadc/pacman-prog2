@@ -2,6 +2,8 @@
 #include "tMapa.h"
 #include "tMovimento.h"
 #include "tPosicao.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 tPacman *CriaPacman(tPosicao *posicao) {
   tPacman *p = (tPacman *)malloc(sizeof(tPacman));
@@ -11,7 +13,8 @@ tPacman *CriaPacman(tPosicao *posicao) {
   if (posicao == NULL) {
     return NULL;
   }
-  AtualizaPosicao(p->posicaoAtual, posicao);
+  p->posicaoAtual = posicao;
+
   p->nColisoesParedeBaixo = 0;
   p->nFrutasComidasBaixo = 0;
   p->nMovimentosBaixo = 0;
@@ -39,7 +42,7 @@ tPacman *CriaPacman(tPosicao *posicao) {
 
 tPacman *ClonaPacman(tPacman *pacman) {
   tPacman *p = (tPacman *)malloc(sizeof(tPacman));
-  AtualizaPosicao(p->posicaoAtual, pacman->posicaoAtual);
+  p->posicaoAtual = ClonaPosicao(pacman->posicaoAtual);
   return p;
 }
 
@@ -47,10 +50,7 @@ tMovimento **ClonaHistoricoDeMovimentosSignificativosPacman(tPacman *pacman) {
   tMovimento **m = (tMovimento **)malloc(pacman->nMovimentosSignificativos *
                                          sizeof(tMovimento *));
   for (int i = 0; i < pacman->nMovimentosSignificativos; i++) {
-    m[i] = CriaMovimento(
-        ObtemNumeroMovimento(pacman->historicoDeMovimentosSignificativos[i]),
-        ObtemComandoMovimento(pacman->historicoDeMovimentosSignificativos[i]),
-        ObtemAcaoMovimento(pacman->historicoDeMovimentosSignificativos[i]));
+    m[i] = pacman->historicoDeMovimentosSignificativos[i];
   }
   return m;
 }
@@ -60,7 +60,7 @@ tPosicao *ObtemPosicaoPacman(tPacman *pacman) { return pacman->posicaoAtual; }
 int EstaVivoPacman(tPacman *pacman) { return pacman->estaVivo; }
 
 void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
-  tPosicao *p = ClonaPosicao(pacman->posicaoAtual);
+  tPosicao *p = pacman->posicaoAtual;
   if (comando == 1) {
     p->linha--;
     if (EncontrouParedeMapa(mapa, p)) {
@@ -68,9 +68,12 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeCima++;
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasCima++;
-    } else if (AcessouTunelMapa(mapa, p)) {
-      EntraTunelMapa(mapa, p);
-    } 
+      AtualizaItemMapa(mapa, p, ' ');
+    } else if(PossuiTunelMapa(mapa)){
+      if(AcessouTunelMapa(mapa, p)){
+        EntraTunelMapa(mapa, p);
+      } 
+    }
     AtualizaPosicao(pacman->posicaoAtual, p);
     pacman->nMovimentosCima++;
   }
@@ -82,8 +85,11 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeBaixo++;
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasBaixo++;
-    } else if (AcessouTunelMapa(mapa, p)) {
-      EntraTunelMapa(mapa, p);
+      AtualizaItemMapa(mapa, p, ' ');
+    } else if(PossuiTunelMapa(mapa)){
+      if(AcessouTunelMapa(mapa, p)){
+        EntraTunelMapa(mapa, p);
+      } 
     }
     AtualizaPosicao(pacman->posicaoAtual, p);
     pacman->nMovimentosBaixo++;
@@ -96,8 +102,11 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeEsquerda++;
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasEsquerda++;
-    } else if (AcessouTunelMapa(mapa, p)) {
-      EntraTunelMapa(mapa, p);
+      AtualizaItemMapa(mapa, p, ' ');
+    } else if(PossuiTunelMapa(mapa)){
+      if(AcessouTunelMapa(mapa, p)){
+        EntraTunelMapa(mapa, p);
+      } 
     }
     AtualizaPosicao(pacman->posicaoAtual, p);
     pacman->nMovimentosEsquerda++;
@@ -110,13 +119,16 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeDireita++;
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasDireita++;
-    } else if (AcessouTunelMapa(mapa, p)) {
-      EntraTunelMapa(mapa, p);
+      AtualizaItemMapa(mapa, p, ' ');
+    } else if(PossuiTunelMapa(mapa)){
+      if(AcessouTunelMapa(mapa, p)){
+        EntraTunelMapa(mapa, p);
+      } 
     }
     AtualizaPosicao(pacman->posicaoAtual, p);
     pacman->nMovimentosDireita++;
   }
-
+  AtualizaTrilhaPacman(pacman);
 }
 
 void CriaTrilhaPacman(tPacman *pacman, int nLinhas, int nColunas) {
