@@ -37,12 +37,14 @@ tPacman *CriaPacman(tPosicao *posicao) {
   p->historicoDeMovimentosSignificativos = NULL;
 
   p->trilha = NULL;
+  p->nLinhasTrilha = 0;
+  p->nColunasTrilha = 0;
   return p;
 }
 
 tPacman *ClonaPacman(tPacman *pacman) {
-  tPacman *p = (tPacman *)malloc(sizeof(tPacman));
-  p->posicaoAtual = ClonaPosicao(pacman->posicaoAtual);
+  tPosicao *posicao = CriaPosicao(ObtemLinhaPosicao(pacman->posicaoAtual), ObtemColunaPosicao(pacman->posicaoAtual));
+  tPacman *p = CriaPacman(posicao);
   return p;
 }
 
@@ -50,7 +52,7 @@ tMovimento **ClonaHistoricoDeMovimentosSignificativosPacman(tPacman *pacman) {
   tMovimento **m = (tMovimento **)malloc(pacman->nMovimentosSignificativos *
                                          sizeof(tMovimento *));
   for (int i = 0; i < pacman->nMovimentosSignificativos; i++) {
-    m[i] = pacman->historicoDeMovimentosSignificativos[i];
+    m[i] = CriaMovimento(ObtemNumeroMovimento(pacman->historicoDeMovimentosSignificativos[i]),ObtemComandoMovimento(pacman->historicoDeMovimentosSignificativos[i]), ObtemAcaoMovimento(pacman->historicoDeMovimentosSignificativos[i]));
   }
   return m;
 }
@@ -76,6 +78,7 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       AtualizaItemMapa(mapa, p, ' ');
     } else if(PossuiTunelMapa(mapa)){
       if(AcessouTunelMapa(mapa, p)){
+        AtualizaTrilhaPacman(pacman);
         EntraTunelMapa(mapa, p);
       } 
     }
@@ -96,6 +99,7 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       AtualizaItemMapa(mapa, p, ' ');
     } else if(PossuiTunelMapa(mapa)){
       if(AcessouTunelMapa(mapa, p)){
+        AtualizaTrilhaPacman(pacman);
         EntraTunelMapa(mapa, p);
       } 
     }
@@ -116,6 +120,7 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       AtualizaItemMapa(mapa, p, ' ');
     } else if(PossuiTunelMapa(mapa)){
       if(AcessouTunelMapa(mapa, p)){
+        AtualizaTrilhaPacman(pacman);
         EntraTunelMapa(mapa, p);
       } 
     }
@@ -136,15 +141,18 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       AtualizaItemMapa(mapa, p, ' ');
     } else if(PossuiTunelMapa(mapa)){
       if(AcessouTunelMapa(mapa, p)){
+        AtualizaTrilhaPacman(pacman);
         EntraTunelMapa(mapa, p);
       } 
     }
     AtualizaPosicao(pacman->posicaoAtual, p);
   }
-    AtualizaTrilhaPacman(pacman);
+  AtualizaTrilhaPacman(pacman);
 }
 
 void CriaTrilhaPacman(tPacman *pacman, int nLinhas, int nColunas) {
+  pacman->nLinhasTrilha = nLinhas;
+  pacman->nColunasTrilha = nColunas;
   if (pacman->trilha == NULL) {
     pacman->trilha = malloc(nLinhas * sizeof(int *));
     for (int i = 0; i < nLinhas; i++) {
@@ -162,17 +170,34 @@ void AtualizaTrilhaPacman(tPacman *pacman) {
       ObtemNumeroAtualMovimentosPacman(pacman);
 }
 
-void SalvaTrilhaPacman(tPacman *pacman) {}
+void SalvaTrilhaPacman(tPacman *pacman) {
+  FILE* trilha;
+  trilha = fopen("trilha.txt", "w");
+  for(int i= 0; i < pacman->nLinhasTrilha; i++){
+    for(int j = 0; j < pacman->nColunasTrilha; j++){
+      if(pacman->trilha[i][j] == -1){
+        if(j == pacman->nColunasTrilha - 1){
+          fprintf(trilha, "#");
+        }
+        else{
+          fprintf(trilha, "# ");
+        }
+      }
+      else{
+        fprintf(trilha, "%d ", pacman->trilha[i][j]);
+      }
+    }
+    fprintf(trilha, "\n");
+  }
+  fclose(trilha);
+}
 
 void InsereNovoMovimentoSignificativoPacman(tPacman *pacman, COMANDO comando,
                                             const char *acao) {
   pacman->nMovimentosSignificativos++;
-  pacman->historicoDeMovimentosSignificativos =
-      realloc(pacman->historicoDeMovimentosSignificativos,
-              pacman->nMovimentosSignificativos * sizeof(tMovimento *));
-  pacman->historicoDeMovimentosSignificativos
-      [pacman->nMovimentosSignificativos - 1] =
-      CriaMovimento(ObtemNumeroAtualMovimentosPacman(pacman), comando, acao);
+  pacman->historicoDeMovimentosSignificativos = realloc(pacman->historicoDeMovimentosSignificativos, pacman->nMovimentosSignificativos * sizeof(tMovimento *));
+  pacman->historicoDeMovimentosSignificativos[pacman->nMovimentosSignificativos - 1] = NULL;
+  pacman->historicoDeMovimentosSignificativos[pacman->nMovimentosSignificativos - 1] = CriaMovimento(ObtemNumeroAtualMovimentosPacman(pacman), comando, acao);
 }
 
 void MataPacman(tPacman* pacman){
@@ -180,16 +205,26 @@ void MataPacman(tPacman* pacman){
 }
 
 void DesalocaPacman(tPacman* pacman){
-  DesalocaPosicao(pacman->posicaoAtual);
-  for(int i = 0; i < pacman->nMovimentosSignificativos; i++){
-    DesalocaMovimento(pacman->historicoDeMovimentosSignificativos[i]);
+  if(pacman != NULL){
+  DesalocaPosicao(pacman->posicaoAtual); 
+  if(pacman->historicoDeMovimentosSignificativos != NULL){
+    for(int i = 0; i < pacman->nMovimentosSignificativos; i++){
+      if(pacman->historicoDeMovimentosSignificativos[i] != NULL){
+        DesalocaMovimento(pacman->historicoDeMovimentosSignificativos[i]);
+      }
+    }
+    free(pacman->historicoDeMovimentosSignificativos);
   }
-  free(pacman->historicoDeMovimentosSignificativos);
-  for(int j = 0; j < pacman->nLinhasTrilha; j++){
-    free(pacman->trilha[j]);
+  if(pacman->trilha != NULL){
+    for(int j = 0; j < pacman->nLinhasTrilha; j++){
+      if(pacman->trilha[j] != NULL){
+        free(pacman->trilha[j]);
+      }
+    }
+    free(pacman->trilha);
   }
-  free(pacman->trilha);
   free(pacman);
+  }
 }
 
 int ObtemNumeroAtualMovimentosPacman(tPacman* pacman){
