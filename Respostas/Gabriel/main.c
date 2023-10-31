@@ -8,6 +8,12 @@
 #include "tPacman.h"
 #include "tFantasma.h"
 
+typedef struct{
+  int comida;
+  int parede;
+  int qtd;
+  char tipo;
+} twasd;
 
 void PrintaMapa(tMapa* mapa){
   for(int i = 0; i < mapa->nLinhas; i++){
@@ -48,6 +54,84 @@ void PrintaResumo(tMovimento** lista, int qtd){
 
   }
   fclose(file);
+}
+
+int Maior(twasd* m1, twasd* m2) {
+  if (m1->comida > m2->comida) {
+    return 1;
+  }
+  if (m1->comida < m2->comida) {
+    return 0;
+  }
+  if (m1->comida == m2->comida) {
+    if (m1->parede < m2->parede) {
+      return 1;
+    }
+    if (m1->parede > m2->parede) {
+      return 0;
+    }
+    if (m1->parede == m2->parede) {
+      if (m1->qtd > m2->qtd) {
+        return 1;
+      }
+      if (m1->qtd < m2->qtd) {
+        return 0;
+      }
+      if (m1->qtd == m2->qtd) {
+        if (m1->tipo < m2->tipo) {
+          return 1;
+        }
+        if (m1->tipo > m2->tipo) {
+          return 0;
+        }
+      }
+    }
+  }
+}
+
+
+void TrocaSeAcharMaior(twasd * vet, int tam, twasd * paraTrocar){
+      for(twasd *p = paraTrocar + 1; p < vet + tam; p++){
+          if(Maior(p, paraTrocar)){
+              twasd aux = *p;
+              *p = *paraTrocar;
+              *paraTrocar = aux;
+          }
+      }
+  }
+
+void PrintaRanking(tPacman* pacman) {
+  twasd vet[4];
+
+  vet[0].comida = ObtemNumeroFrutasComidasBaixoPacman(pacman);
+  vet[0].tipo = 's';
+  vet[0].parede = ObtemNumeroColisoesParedeBaixoPacman(pacman);
+  vet[0].qtd = ObtemNumeroMovimentosBaixoPacman(pacman);
+
+  vet[1].comida = ObtemNumeroFrutasComidasCimaPacman(pacman);
+  vet[1].tipo = 'w';
+  vet[1].parede = ObtemNumeroColisoesParedeCimaPacman(pacman);
+  vet[1].qtd = ObtemNumeroMovimentosCimaPacman(pacman);
+
+  vet[2].comida = ObtemNumeroFrutasComidasDireitaPacman(pacman);
+  vet[2].tipo = 'd';
+  vet[2].parede = ObtemNumeroColisoesParedeDireitaPacman(pacman);
+  vet[2].qtd = ObtemNumeroMovimentosDireitaPacman(pacman);
+
+  vet[3].comida = ObtemNumeroFrutasComidasEsquerdaPacman(pacman);
+  vet[3].tipo = 'a';
+  vet[3].parede = ObtemNumeroColisoesParedeEsquerdaPacman(pacman);
+  vet[3].qtd = ObtemNumeroMovimentosEsquerdaPacman(pacman);
+
+  FILE *pFile;
+  pFile = fopen("ranking.txt", "w");
+  for(int i = 0; i < 4; i++){
+      TrocaSeAcharMaior(vet, 4, &vet[i]);
+  }
+  for(int i = 0; i < 4; i++){
+    fprintf(pFile, "%c,%d,%d,%d\n", vet[i].tipo, vet[i].comida, vet[i].parede,vet[i].qtd);
+  }
+  fclose(pFile);
 }
 
 int main(int argc, char *argv[]) {
@@ -203,6 +287,7 @@ int main(int argc, char *argv[]) {
   SalvaTrilhaPacman(pacman);
   PrintaEstatistica(pacman);
   PrintaResumo(pacman->historicoDeMovimentosSignificativos, pacman->nMovimentosSignificativos);
+  PrintaRanking(pacman);
 
   if(clone != NULL){
     for(int i = 0; i < pacman->nMovimentosSignificativos; i++){
