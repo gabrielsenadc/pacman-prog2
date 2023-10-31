@@ -12,10 +12,42 @@
 void PrintaMapa(tMapa* mapa){
   for(int i = 0; i < mapa->nLinhas; i++){
     for(int j = 0; j < mapa->nColunas; j++){
-        printf("%c ", mapa->grid[i][j]);
+        printf("%c", mapa->grid[i][j]);
     }
     printf("\n");
   }
+}
+
+void PrintaEstatistica(tPacman* pacman){
+  FILE* file;
+  file = fopen("estatisticas.txt", "w");
+  fprintf(file, "Numero de movimentos: %d\n", ObtemNumeroAtualMovimentosPacman(pacman));
+  fprintf(file, "Numero de movimentos sem pontuar: %d\n", ObtemNumeroMovimentosSemPontuarPacman(pacman));
+  fprintf(file, "Numero de colisoes com parede: %d\n", ObtemNumeroColisoesParedePacman(pacman));
+  fprintf(file, "Numero de movimentos para baixo: %d\nNumero de movimentos para cima: %d\nNumero de movimentos para esquerda: %d\nNumero de movimentos para direita: %d\n", 
+                ObtemNumeroMovimentosBaixoPacman(pacman), ObtemNumeroMovimentosCimaPacman(pacman), ObtemNumeroMovimentosEsquerdaPacman(pacman), ObtemNumeroMovimentosDireitaPacman(pacman));
+  fclose(file);
+}
+
+void PrintaResumo(tMovimento** lista, int qtd){
+  FILE* file;
+  file = fopen("resumo.txt", "w");
+  for(int i = 0; i < qtd; i++){
+    if(lista[i]->comando == 0){
+      fprintf(file, "Movimento %d (a) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    }
+    if(lista[i]->comando == 1){
+      fprintf(file, "Movimento %d (w) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    }
+    if(lista[i]->comando == 2){
+      fprintf(file, "Movimento %d (s) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    }
+    if(lista[i]->comando == 3){
+      fprintf(file, "Movimento %d (d) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    }
+
+  }
+  fclose(file);
 }
 
 int main(int argc, char *argv[]) {
@@ -61,9 +93,13 @@ int main(int argc, char *argv[]) {
 
   tPosicao* anterior = NULL;
   char acao = '\0';
+  int venceu = 0;
 
+  AtualizaTrilhaPacman(pacman);
   for(int g = 0; g < mapa->nMaximoMovimentos; g++){
     if(ObtemQuantidadeFrutasIniciaisMapa(mapa) == ObtemPontuacaoAtualPacman(pacman)){
+      printf("Voce venceu!\nPontuacao final: %d", ObtemPontuacaoAtualPacman(pacman));
+      venceu = 1;
       break;
     }
     if(!EstaVivoPacman(pacman)){
@@ -72,7 +108,8 @@ int main(int argc, char *argv[]) {
     if(g != 0){
       anterior = ClonaPosicao(pacman->posicaoAtual);
     }
-    scanf("%c", &acao);
+    AtualizaItemMapa(mapa, pacman->posicaoAtual, ' ');
+    scanf("%c\n", &acao);
     if(acao == 'a'){
        MovePacman(pacman, mapa, 0);
     }
@@ -85,7 +122,26 @@ int main(int argc, char *argv[]) {
     if(acao == 'd'){
        MovePacman(pacman, mapa, 3);
     }
-    AtualizaItemMapa(mapa, pacman->posicaoAtual, ' ');
+    
+    if(TemComida(mapa, P, pacman) || TemComida(mapa, B, pacman) || TemComida(mapa, C, pacman) || TemComida(mapa, I, pacman)){
+      if(acao == 'a'){
+        (pacman->nFrutasComidasEsquerda)++;
+        InsereNovoMovimentoSignificativoPacman(pacman, 0, "pegou comida");
+      }
+      if(acao == 'd'){
+        (pacman->nFrutasComidasDireita)++;
+        InsereNovoMovimentoSignificativoPacman(pacman, 3, "pegou comida");
+      }
+      if(acao == 's'){
+        (pacman->nFrutasComidasBaixo)++;
+        InsereNovoMovimentoSignificativoPacman(pacman, 2, "pegou comida");
+      }
+      if(acao == 'w'){
+        (pacman->nFrutasComidasCima)++;
+        InsereNovoMovimentoSignificativoPacman(pacman, 1, "pegou comida");
+      }
+
+    }
 
     MoveFantasma(P, mapa);
     MoveFantasma(B, mapa);
@@ -111,6 +167,10 @@ int main(int argc, char *argv[]) {
     if(C != NULL){
       AtualizaItemMapa(mapa, C->posicao, 'C');
     }
+    if(mapa->tunel != NULL){
+      AtualizaItemMapa(mapa, mapa->tunel->acesso1, '@');
+      AtualizaItemMapa(mapa, mapa->tunel->acesso2, '@');
+    }
     if(EstaVivoPacman(pacman)){
       AtualizaItemMapa(mapa, pacman->posicaoAtual, '>');
     }
@@ -119,8 +179,39 @@ int main(int argc, char *argv[]) {
     printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
   }
 
+  if(venceu == 0){
+    printf("Game over!\nPontuacao final: %d", ObtemPontuacaoAtualPacman(pacman));
+  }
+  if(!EstaVivoPacman(pacman)){
+    if(acao == 'a'){
+      InsereNovoMovimentoSignificativoPacman(pacman, 0, "fim de jogo por encostar em um fantasma");
+    }
+    if(acao == 'w'){
+      InsereNovoMovimentoSignificativoPacman(pacman, 1, "fim de jogo por encostar em um fantasma");
+    }
+    if(acao == 's'){
+      InsereNovoMovimentoSignificativoPacman(pacman, 2, "fim de jogo por encostar em um fantasma");
+    }
+    if(acao == 'd'){
+      InsereNovoMovimentoSignificativoPacman(pacman, 3, "fim de jogo por encostar em um fantasma");
+    }
+  }
 
+  tMovimento** clone = NULL;
+  clone = ClonaHistoricoDeMovimentosSignificativosPacman(pacman);
 
+  SalvaTrilhaPacman(pacman);
+  PrintaEstatistica(pacman);
+  PrintaResumo(pacman->historicoDeMovimentosSignificativos, pacman->nMovimentosSignificativos);
+
+  if(clone != NULL){
+    for(int i = 0; i < pacman->nMovimentosSignificativos; i++){
+      if(clone[i] != NULL){
+        DesalocaMovimento(clone[i]);
+      }
+    }
+    free(clone);
+  }
   DesalocaFantasma(P);
   DesalocaFantasma(B);
   DesalocaFantasma(I);

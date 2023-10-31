@@ -112,6 +112,17 @@ void Morreu(tFantasma *F, tPacman *pacman, tPosicao *anterior){
   }
 }
 
+int TemComida(tMapa* mapa, tFantasma *F, tPacman* pacman){
+  if(F != NULL){
+    if(SaoIguaisPosicao(pacman->posicaoAtual, F->posicao)){
+      if(F->fruta == 1){
+      return 1;
+    }
+  }
+  }
+  return 0;
+}
+
 void DesalocaFantasma(tFantasma *F){
   if(F != NULL){
     DesalocaPosicao(F->posicao);

@@ -25,6 +25,8 @@ void MoveFantasma(tFantasma *F, tMapa *mapa);
 
 void Morreu(tFantasma *F, tPacman *pacman, tPosicao *anterior);
 
+int TemComida(tMapa* mapa, tFantasma *F, tPacman* pacman);
+
 void DesalocaFantasma(tFantasma *F);
 
 
