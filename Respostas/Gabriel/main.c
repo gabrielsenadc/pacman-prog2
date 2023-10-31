@@ -1,21 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "tMapa.h"
 #include "tPosicao.h"
 #include "tTunel.h"
 #include "tPosicao.h"
 #include "tMovimento.h"
-#include "tFantasma.h"
 #include "tPacman.h"
+#include "tFantasma.h"
+
 
 void PrintaMapa(tMapa* mapa){
   for(int i = 0; i < mapa->nLinhas; i++){
     for(int j = 0; j < mapa->nColunas; j++){
-      if(j == mapa->nColunas--){
-        printf("%c", mapa->grid[i][j]);
-      }
-      else{
         printf("%c ", mapa->grid[i][j]);
-      }
     }
     printf("\n");
   }
@@ -26,33 +23,47 @@ int main(int argc, char *argv[]) {
     printf("ERRO: O diretorio de arquivos de configuracao nao foi informado");
     return 1;
   } //verificar se recebeu o diretorio
-  char diretorio[1001];
-  sprintf(diretorio, "%s", argv[1]); //transormar o diretorio em uma string
-  tMapa* mapa = CriaMapa(diretorio);
-  
+
+  tMapa* mapa = CriaMapa(argv[1]);
+  if(mapa == NULL){
+    return 1;
+  }
+
+  FILE* inicializacao;
+  inicializacao = fopen("inicializacao.txt", "w"); 
+  int i = 0, j = 0;
+  for(i = 0; i < ObtemNumeroLinhasMapa(mapa); i++){
+    for(j = 0; j < ObtemNumeroColunasMapa(mapa); j++){
+      fprintf(inicializacao, "%c", mapa->grid[i][j]);;
+      
+    }
+    fprintf(inicializacao, "\n");
+  }
   tPosicao *ppacman = ObtemPosicaoItemMapa(mapa, '>');
-  tPacman *pacman = CriaPacman(ppacman);
+  tPacman* pacman = CriaPacman(ppacman);
+  fprintf(inicializacao, "Pac-Man comecara o jogo na linha %d e coluna %d", ObtemLinhaPosicao(pacman->posicaoAtual) + 1, ObtemColunaPosicao(pacman->posicaoAtual) + 1);
+  fclose(inicializacao);
+
   
   tPosicao *pB = ObtemPosicaoItemMapa(mapa, 'B');
   tFantasma *B = CriaFantasma(pB, 'B');
 
   tPosicao *pP = ObtemPosicaoItemMapa(mapa, 'P');
-  tFantasma *P = CriaFantasma(pB, 'P');
+  tFantasma *P = CriaFantasma(pP, 'P');
 
   tPosicao *pI = ObtemPosicaoItemMapa(mapa, 'I');
-  tFantasma *I = CriaFantasma(pB, 'I');
+  tFantasma *I = CriaFantasma(pI, 'I');
 
   tPosicao *pC = ObtemPosicaoItemMapa(mapa, 'C');
-  tFantasma *C = CriaFantasma(pB, 'C');
-  
-  int venceu = 0;
-  char acao = '\0';
+  tFantasma *C = CriaFantasma(pC, 'C');
+
+  CriaTrilhaPacman(pacman, mapa->nLinhas, mapa->nColunas);
 
   tPosicao* anterior = NULL;
-  
+  char acao = '\0';
+
   for(int g = 0; g < mapa->nMaximoMovimentos; g++){
     if(ObtemQuantidadeFrutasIniciaisMapa(mapa) == ObtemPontuacaoAtualPacman(pacman)){
-      venceu = 1;
       break;
     }
     if(!EstaVivoPacman(pacman)){
@@ -74,11 +85,12 @@ int main(int argc, char *argv[]) {
     if(acao == 'd'){
        MovePacman(pacman, mapa, 3);
     }
+    AtualizaItemMapa(mapa, pacman->posicaoAtual, ' ');
 
-    MoveFantasma(P);
-    MoveFantasma(B);
-    MoveFantasma(I);
-    MoveFantasma(C);
+    MoveFantasma(P, mapa);
+    MoveFantasma(B, mapa);
+    MoveFantasma(I, mapa);
+    MoveFantasma(C, mapa);
 
     Morreu(P, pacman, anterior);
     Morreu(B, pacman, anterior);
@@ -102,7 +114,18 @@ int main(int argc, char *argv[]) {
     if(EstaVivoPacman(pacman)){
       AtualizaItemMapa(mapa, pacman->posicaoAtual, '>');
     }
+    printf("Estado do jogo apos o movimento '%c':\n", acao);
+    PrintaMapa(mapa);
+    printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
   }
 
-  PrintaMapa(mapa);
+
+
+  DesalocaFantasma(P);
+  DesalocaFantasma(B);
+  DesalocaFantasma(I);
+  DesalocaFantasma(C);
+  DesalocaMapa(mapa);
+  DesalocaPacman(pacman);
+  return 0;
 }

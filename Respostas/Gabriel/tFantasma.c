@@ -87,6 +87,9 @@ void MoveFantasma(tFantasma *F, tMapa *mapa){
       AtualizaItemMapa(mapa, F->posicao, '*');
       F->fruta = 0;
     }
+    else{
+      AtualizaItemMapa(mapa, F->posicao, ' ');
+    }
     if(F->tipo == 'P' || F->tipo == 'I'){
       AndaVertical(F, mapa);
     }
@@ -109,7 +112,7 @@ void Morreu(tFantasma *F, tPacman *pacman, tPosicao *anterior){
   }
 }
 
-void DesalocaFantamsa(tFantasma *F){
+void DesalocaFantasma(tFantasma *F){
   if(F != NULL){
     DesalocaPosicao(F->posicao);
     free(F);

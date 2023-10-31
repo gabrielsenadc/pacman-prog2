@@ -25,7 +25,7 @@ void MoveFantasma(tFantasma *F, tMapa *mapa);
 
 void Morreu(tFantasma *F, tPacman *pacman, tPosicao *anterior);
 
-void DesalocaFantamsa(tFantasma *F);
+void DesalocaFantasma(tFantasma *F);
 
 
 #endif
