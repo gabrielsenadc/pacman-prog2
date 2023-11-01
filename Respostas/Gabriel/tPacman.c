@@ -44,7 +44,7 @@ tPacman *CriaPacman(tPosicao *posicao) {
 
 tPacman *ClonaPacman(tPacman *pacman) {
   tPosicao *posicao = CriaPosicao(ObtemLinhaPosicao(pacman->posicaoAtual), ObtemColunaPosicao(pacman->posicaoAtual));
-  tPacman *p = CriaPacman(posicao);
+  tPacman *p = CriaPacman(posicao); 
   return p;
 }
 
@@ -62,8 +62,7 @@ tPosicao *ObtemPosicaoPacman(tPacman *pacman) { return pacman->posicaoAtual; }
 int EstaVivoPacman(tPacman *pacman) { return pacman->estaVivo; }
 
 void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
-  int comida = 0;
-  tPosicao *p = pacman->posicaoAtual;
+  tPosicao *p = pacman->posicaoAtual; //cria posicao (nao dinamicamente) para ser analisada
   if (comando == 1) {
     pacman->nMovimentosCima++;
     p->linha--;
@@ -72,17 +71,16 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeCima++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
     } else if (EncontrouComidaMapa(mapa, p)) {
-      comida++;
       pacman->nFrutasComidasCima++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
-      AtualizaItemMapa(mapa, p, ' ');
+      AtualizaItemMapa(mapa, p, ' '); //tira comida do mapa
     } else if(PossuiTunelMapa(mapa)){
       if(AcessouTunelMapa(mapa, p)){
-        AtualizaTrilhaPacman(pacman);
+        AtualizaTrilhaPacman(pacman); //se entrar no tunel, atualiza a trilha nessa posicao tambem
         EntraTunelMapa(mapa, p);
       } 
     }
-    AtualizaPosicao(pacman->posicaoAtual, p);
+    AtualizaPosicao(pacman->posicaoAtual, p); //atualiza a posicao do pacman com a posicao analisada
   }
 
   if (comando == 2) {
@@ -93,7 +91,6 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeBaixo++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
     } else if (EncontrouComidaMapa(mapa, p)) {
-      comida++;
       pacman->nFrutasComidasBaixo++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
       AtualizaItemMapa(mapa, p, ' ');
@@ -114,7 +111,6 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeEsquerda++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
     } else if (EncontrouComidaMapa(mapa, p)) {
-      comida++;
       pacman->nFrutasComidasEsquerda++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
       AtualizaItemMapa(mapa, p, ' ');
@@ -135,7 +131,6 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
       pacman->nColisoesParedeDireita++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
     } else if (EncontrouComidaMapa(mapa, p)) {
-      comida++;
       pacman->nFrutasComidasDireita++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
       AtualizaItemMapa(mapa, p, ' ');
@@ -175,7 +170,7 @@ void SalvaTrilhaPacman(tPacman *pacman) {
   trilha = fopen("trilha.txt", "w");
   for(int i= 0; i < pacman->nLinhasTrilha; i++){
     for(int j = 0; j < pacman->nColunasTrilha; j++){
-      if(pacman->trilha[i][j] == -1){
+      if(pacman->trilha[i][j] == -1){ //se o pacman nao passou nessa posicao
         if(j == pacman->nColunasTrilha - 1){
           fprintf(trilha, "#");
         }
