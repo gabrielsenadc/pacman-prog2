@@ -8,17 +8,19 @@
 #include "tPacman.h"
 #include "tFantasma.h"
 
-typedef struct{
+typedef struct{ 
   int comida;
   int parede;
   int qtd;
   char tipo;
-} twasd;
+} twasd; //coloca as informacoes de cada sentido(w, a, s, d) em uma struct para analisar o ranking
 
 void PrintaMapa(tMapa* mapa){
-  for(int i = 0; i < mapa->nLinhas; i++){
-    for(int j = 0; j < mapa->nColunas; j++){
-        printf("%c", mapa->grid[i][j]);
+  for(int i = 0; i < ObtemNumeroLinhasMapa(mapa); i++){
+    for(int j = 0; j < ObtemNumeroColunasMapa(mapa); j++){
+        tPosicao * posicao = CriaPosicao(i, j);
+        printf("%c", ObtemItemMapa(mapa, posicao));
+        DesalocaPosicao(posicao);
     }
     printf("\n");
   }
@@ -39,24 +41,24 @@ void PrintaResumo(tMovimento** lista, int qtd){
   FILE* file;
   file = fopen("resumo.txt", "w");
   for(int i = 0; i < qtd; i++){
-    if(lista[i]->comando == 0){
-      fprintf(file, "Movimento %d (a) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    if(ObtemComandoMovimento(lista[i]) == 0){
+      fprintf(file, "Movimento %d (a) %s\n", ObtemNumeroMovimento(lista[i]), ObtemAcaoMovimento(lista[i]));
     }
-    if(lista[i]->comando == 1){
-      fprintf(file, "Movimento %d (w) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    if(ObtemComandoMovimento(lista[i]) == 1){
+      fprintf(file, "Movimento %d (w) %s\n", ObtemNumeroMovimento(lista[i]), ObtemAcaoMovimento(lista[i]));
     }
-    if(lista[i]->comando == 2){
-      fprintf(file, "Movimento %d (s) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    if(ObtemComandoMovimento(lista[i]) == 2){
+      fprintf(file, "Movimento %d (s) %s\n", ObtemNumeroMovimento(lista[i]), ObtemAcaoMovimento(lista[i]));
     }
-    if(lista[i]->comando == 3){
-      fprintf(file, "Movimento %d (d) %s\n", lista[i]->numeroDoMovimento, lista[i]->acao);
+    if(ObtemComandoMovimento(lista[i]) == 3){
+      fprintf(file, "Movimento %d (d) %s\n", ObtemNumeroMovimento(lista[i]), ObtemAcaoMovimento(lista[i]));
     }
 
   }
   fclose(file);
 }
 
-int Maior(twasd* m1, twasd* m2) {
+int Maior(twasd* m1, twasd* m2) { // compara qual dos sentidos(w, a, s, d) estao em uma posicao maior no ranking
   if (m1->comida > m2->comida) {
     return 1;
   }
@@ -90,7 +92,7 @@ int Maior(twasd* m1, twasd* m2) {
 }
 
 
-void TrocaSeAcharMaior(twasd * vet, int tam, twasd * paraTrocar){
+void TrocaSeAcharMaior(twasd * vet, int tam, twasd * paraTrocar){  //ordena os sentidos(w, a, s, d)
       for(twasd *p = paraTrocar + 1; p < vet + tam; p++){
           if(Maior(p, paraTrocar)){
               twasd aux = *p;
@@ -103,6 +105,7 @@ void TrocaSeAcharMaior(twasd * vet, int tam, twasd * paraTrocar){
 void PrintaRanking(tPacman* pacman) {
   twasd vet[4];
 
+  // atribui as informacoes dos sentidos(w, a, s, d) na struct para ser analisado posteriormente
   vet[0].comida = ObtemNumeroFrutasComidasBaixoPacman(pacman);
   vet[0].tipo = 's';
   vet[0].parede = ObtemNumeroColisoesParedeBaixoPacman(pacman);
@@ -141,17 +144,19 @@ int main(int argc, char *argv[]) {
   } //verificar se recebeu o diretorio
 
   tMapa* mapa = CriaMapa(argv[1]);
-  if(mapa == NULL){
+  if(mapa == NULL){ //nao criar o mapa 
     return 1;
   }
 
+  // inicializacao
   FILE* inicializacao;
   inicializacao = fopen("inicializacao.txt", "w"); 
   int i = 0, j = 0;
   for(i = 0; i < ObtemNumeroLinhasMapa(mapa); i++){
     for(j = 0; j < ObtemNumeroColunasMapa(mapa); j++){
-      fprintf(inicializacao, "%c", mapa->grid[i][j]);;
-      
+      tPosicao * posicao = CriaPosicao(i, j);
+      fprintf(inicializacao, "%c", ObtemItemMapa(mapa, posicao));
+      DesalocaPosicao(posicao);
     }
     fprintf(inicializacao, "\n");
   }
@@ -160,7 +165,7 @@ int main(int argc, char *argv[]) {
   fprintf(inicializacao, "Pac-Man comecara o jogo na linha %d e coluna %d", ObtemLinhaPosicao(pacman->posicaoAtual) + 1, ObtemColunaPosicao(pacman->posicaoAtual) + 1);
   fclose(inicializacao);
 
-  
+  // cria fantasmas
   tPosicao *pB = ObtemPosicaoItemMapa(mapa, 'B');
   tFantasma *B = CriaFantasma(pB, 'B');
 
@@ -180,7 +185,7 @@ int main(int argc, char *argv[]) {
   int venceu = 0;
 
   AtualizaTrilhaPacman(pacman);
-  for(int g = 0; g < mapa->nMaximoMovimentos; g++){
+  for(int g = 0; g < ObtemNumeroMaximoMovimentosMapa(mapa); g++){
     if(ObtemQuantidadeFrutasIniciaisMapa(mapa) == ObtemPontuacaoAtualPacman(pacman)){
       printf("Voce venceu!\nPontuacao final: %d", ObtemPontuacaoAtualPacman(pacman));
       venceu = 1;
@@ -189,10 +194,10 @@ int main(int argc, char *argv[]) {
     if(!EstaVivoPacman(pacman)){
       break;
     }
-    if(g != 0){
+    if(g != 0){ //criar posicao anterior do pacman para analisar se morreu
       anterior = ClonaPosicao(pacman->posicaoAtual);
     }
-    AtualizaItemMapa(mapa, pacman->posicaoAtual, ' ');
+    AtualizaItemMapa(mapa, pacman->posicaoAtual, ' '); //tira opacman do mapa
     scanf("%c\n", &acao);
     if(acao == 'a'){
        MovePacman(pacman, mapa, 0);
@@ -206,8 +211,8 @@ int main(int argc, char *argv[]) {
     if(acao == 'd'){
        MovePacman(pacman, mapa, 3);
     }
-    
-    if(TemComida(mapa, P, pacman) || TemComida(mapa, B, pacman) || TemComida(mapa, C, pacman) || TemComida(mapa, I, pacman)){
+
+    if(TemComida(mapa, P, pacman) || TemComida(mapa, B, pacman) || TemComida(mapa, C, pacman) || TemComida(mapa, I, pacman)){ //analisa caso tenha comida na posicao que o pacman se moveu e exista um fantasma em cima dela
       if(acao == 'a'){
         (pacman->nFrutasComidasEsquerda)++;
         InsereNovoMovimentoSignificativoPacman(pacman, 0, "pegou comida");
@@ -240,33 +245,33 @@ int main(int argc, char *argv[]) {
     anterior = NULL;
 
     if(P != NULL){
-      AtualizaItemMapa(mapa, P->posicao, 'P');
+      AtualizaItemMapa(mapa, ObtemPosicaoFantasma(P), 'P');
     }
     if(B != NULL){
-      AtualizaItemMapa(mapa, B->posicao, 'B');
+      AtualizaItemMapa(mapa, ObtemPosicaoFantasma(B), 'B');
     }
     if(I != NULL){
-      AtualizaItemMapa(mapa, I->posicao, 'I');
+      AtualizaItemMapa(mapa, ObtemPosicaoFantasma(I), 'I');
     }
     if(C != NULL){
-      AtualizaItemMapa(mapa, C->posicao, 'C');
+      AtualizaItemMapa(mapa, ObtemPosicaoFantasma(C), 'C');
     }
     if(mapa->tunel != NULL){
       AtualizaItemMapa(mapa, mapa->tunel->acesso1, '@');
       AtualizaItemMapa(mapa, mapa->tunel->acesso2, '@');
     }
     if(EstaVivoPacman(pacman)){
-      AtualizaItemMapa(mapa, pacman->posicaoAtual, '>');
+      AtualizaItemMapa(mapa, ObtemPosicaoPacman(pacman), '>');
     }
     printf("Estado do jogo apos o movimento '%c':\n", acao);
     PrintaMapa(mapa);
     printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
   }
 
-  if(venceu == 0){
+  if(venceu == 0){ //caso o pacman tenha perdido
     printf("Game over!\nPontuacao final: %d", ObtemPontuacaoAtualPacman(pacman));
   }
-  if(!EstaVivoPacman(pacman)){
+  if(!EstaVivoPacman(pacman)){ //caso o pacman tenha morrido
     if(acao == 'a'){
       InsereNovoMovimentoSignificativoPacman(pacman, 0, "fim de jogo por encostar em um fantasma");
     }
@@ -286,11 +291,11 @@ int main(int argc, char *argv[]) {
 
   SalvaTrilhaPacman(pacman);
   PrintaEstatistica(pacman);
-  PrintaResumo(pacman->historicoDeMovimentosSignificativos, pacman->nMovimentosSignificativos);
+  PrintaResumo(clone, ObtemNumeroMovimentosSignificativosPacman(pacman));
   PrintaRanking(pacman);
 
   if(clone != NULL){
-    for(int i = 0; i < pacman->nMovimentosSignificativos; i++){
+    for(int i = 0; i < ObtemNumeroMovimentosSignificativosPacman(pacman); i++){
       if(clone[i] != NULL){
         DesalocaMovimento(clone[i]);
       }

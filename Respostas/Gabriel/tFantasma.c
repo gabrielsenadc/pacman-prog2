@@ -29,6 +29,7 @@ void AndaVertical(tFantasma *F, tMapa *mapa) {
   if (F->cima == 1) {                     
     p->linha--;
     if (EncontrouParedeMapa(mapa, p)) { // caso bata com a parede muda de sentido
+
       F->cima = 0;
       p->linha += 2;
     }
@@ -119,6 +120,10 @@ int TemComida(tMapa *mapa, tFantasma *F, tPacman *pacman) {
     }
   }
   return 0;
+}
+
+tPosicao* ObtemPosicaoFantasma(tFantasma *F){
+  return F->posicao;
 }
 
 void DesalocaFantasma(tFantasma *F) {

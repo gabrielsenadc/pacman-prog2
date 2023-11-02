@@ -56,8 +56,12 @@ void Morreu(tFantasma *F, tPacman *pacman, tPosicao *anterior);
 //  \param pacman pacman
 int TemComida(tMapa *mapa, tFantasma *F, tPacman *pacman);
 
+// retorna a posicao do fantasma, caso ele exista
+//  \param F fantasma
+tPosicao* ObtemPosicaoFantasma(tFantasma *F);
+
 // desaloca fantasma caso ele seja diferente de NULL
 //  \param F fantasma
-void DesalocaFantamsa(tFantasma *F);
+void DesalocaFantasma(tFantasma *F);
 
 #endif
