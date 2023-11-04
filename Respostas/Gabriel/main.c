@@ -162,7 +162,7 @@ int main(int argc, char *argv[]) {
   }
   tPosicao *ppacman = ObtemPosicaoItemMapa(mapa, '>');
   tPacman* pacman = CriaPacman(ppacman);
-  fprintf(inicializacao, "Pac-Man comecara o jogo na linha %d e coluna %d", ObtemLinhaPosicao(pacman->posicaoAtual) + 1, ObtemColunaPosicao(pacman->posicaoAtual) + 1);
+  fprintf(inicializacao, "Pac-Man comecara o jogo na linha %d e coluna %d", ObtemLinhaPosicao(ObtemPosicaoPacman(pacman)) + 1, ObtemColunaPosicao(ObtemPosicaoPacman(pacman)) + 1);
   fclose(inicializacao);
 
   // cria fantasmas
@@ -178,7 +178,7 @@ int main(int argc, char *argv[]) {
   tPosicao *pC = ObtemPosicaoItemMapa(mapa, 'C');
   tFantasma *C = CriaFantasma(pC, 'C');
 
-  CriaTrilhaPacman(pacman, mapa->nLinhas, mapa->nColunas);
+  CriaTrilhaPacman(pacman, ObtemNumeroLinhasMapa(mapa),ObtemNumeroColunasMapa(mapa));
 
   tPosicao* anterior = NULL;
   char acao = '\0';
@@ -195,9 +195,21 @@ int main(int argc, char *argv[]) {
       break;
     }
     if(g != 0){ //criar posicao anterior do pacman para analisar se morreu
-      anterior = ClonaPosicao(pacman->posicaoAtual);
+      anterior = ClonaPosicao(ObtemPosicaoPacman(pacman));
     }
-    AtualizaItemMapa(mapa, pacman->posicaoAtual, ' '); //tira opacman do mapa
+    
+    if(PossuiTunelMapa(mapa)){ // caso o mapa possua tunel
+      if(EntrouTunel(ObtemTunelMapa(mapa), ObtemPosicaoPacman(pacman))){ //se o pacman estava em cima de um tunel, volta ele pro mapa
+        AtualizaItemMapa(mapa, ObtemPosicaoPacman(pacman), '@'); 
+      }
+      else {
+        AtualizaItemMapa(mapa, ObtemPosicaoPacman(pacman), ' '); // caso nao, coloca um espaco vazio
+      }
+    }
+    else{ //se nao tiver tunel, coloca um espaco vazio onde o pacman estava
+      AtualizaItemMapa(mapa, ObtemPosicaoPacman(pacman), ' '); 
+    }
+
     scanf("%c\n", &acao);
     if(acao == 'a'){
        MovePacman(pacman, mapa, 0);
@@ -256,13 +268,10 @@ int main(int argc, char *argv[]) {
     if(C != NULL){
       AtualizaItemMapa(mapa, ObtemPosicaoFantasma(C), 'C');
     }
-    if(mapa->tunel != NULL){
-      AtualizaItemMapa(mapa, mapa->tunel->acesso1, '@');
-      AtualizaItemMapa(mapa, mapa->tunel->acesso2, '@');
-    }
     if(EstaVivoPacman(pacman)){
       AtualizaItemMapa(mapa, ObtemPosicaoPacman(pacman), '>');
     }
+
     printf("Estado do jogo apos o movimento '%c':\n", acao);
     PrintaMapa(mapa);
     printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
