@@ -216,10 +216,6 @@ int main(int argc, char *argv[]) {
     if(g != 0){ //criar posicao anterior do pacman para analisar se morreu
       anterior = ClonaPosicao(ObtemPosicaoPacman(pacman));
     }
-    
-    printf("Estado do jogo apos o movimento '%c':\n", acao);
-    PrintaMapa(mapa);
-    printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
 
     if(PossuiTunelMapa(mapa)){ // caso o mapa possua tunel
       if(EntrouTunel(ObtemTunelMapa(mapa), ObtemPosicaoPacman(pacman))){ //se o pacman estava em cima de um tunel, volta ele pro mapa
@@ -330,12 +326,13 @@ int main(int argc, char *argv[]) {
     if(EstaVivoPacman(pacman)){
       AtualizaItemMapa(mapa, ObtemPosicaoPacman(pacman), '>');
     }
-
+   
+    printf("Estado do jogo apos o movimento '%c':\n", acao);
+    PrintaMapa(mapa);
+    printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
   }
 
-  printf("Estado do jogo apos o movimento '%c':\n", acao);
-  PrintaMapa(mapa);
-  printf("Pontuacao: %d\n\n", ObtemPontuacaoAtualPacman(pacman));
+  
 
   if(venceu == 0){ //caso o pacman tenha perdido
     printf("Game over!\nPontuacao final: %d", ObtemPontuacaoAtualPacman(pacman));
