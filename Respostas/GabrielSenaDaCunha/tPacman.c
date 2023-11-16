@@ -40,7 +40,11 @@ tPacman *CriaPacman(tPosicao *posicao) {
   p->nLinhasTrilha = 0;
   p->nColunasTrilha = 0;
 
-  p->contagem = -1;
+  p->contagemMais = -1;
+  p->parede = 0;
+  p->contagemX = -1;
+
+  p->contagemBomba = -1;
   p->bomba = NULL;
   return p;
 }
@@ -70,9 +74,14 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
     pacman->nMovimentosCima++;
     p->linha--;
     if (EncontrouParedeMapa(mapa, p)) {
-      p->linha++;
-      pacman->nColisoesParedeCima++;
-      InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      if(pacman->contagemMais >= 0 && p->linha != 0){
+        pacman->parede = 1;
+      }
+      else {
+        p->linha++;
+        pacman->nColisoesParedeCima++;
+        InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      }
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasCima++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
@@ -82,7 +91,7 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
         AtualizaTrilhaPacman(pacman); //se entrar no tunel, atualiza a trilha nessa posicao tambem
         EntraTunelMapa(mapa, p);
       } 
-    }
+    } 
     AtualizaPosicao(pacman->posicaoAtual, p); //atualiza a posicao do pacman com a posicao analisada
   }
 
@@ -90,9 +99,14 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
     p->linha++;
     pacman->nMovimentosBaixo++;
     if (EncontrouParedeMapa(mapa, p)) {
-      p->linha--;
-      pacman->nColisoesParedeBaixo++;
-      InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      if(pacman->contagemMais >= 0 && p->linha != ObtemNumeroLinhasMapa(mapa) - 1){
+        pacman->parede = 1;
+      }
+      else{
+        p->linha--;
+        pacman->nColisoesParedeBaixo++;
+        InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      }
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasBaixo++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
@@ -102,7 +116,7 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
         AtualizaTrilhaPacman(pacman);
         EntraTunelMapa(mapa, p);
       } 
-    }
+    } 
     AtualizaPosicao(pacman->posicaoAtual, p);
   }
 
@@ -110,9 +124,14 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
     p->coluna--;
     pacman->nMovimentosEsquerda++;
     if (EncontrouParedeMapa(mapa, p)) {
-      p->coluna++;
-      pacman->nColisoesParedeEsquerda++;
-      InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      if(pacman->contagemMais >= 0 && p->coluna != 0){
+        pacman->parede = 1;
+      }
+      else{
+        p->coluna++;
+        pacman->nColisoesParedeEsquerda++;
+        InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      }
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasEsquerda++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
@@ -122,7 +141,7 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
         AtualizaTrilhaPacman(pacman);
         EntraTunelMapa(mapa, p);
       } 
-    }
+    } 
     AtualizaPosicao(pacman->posicaoAtual, p);
   }
 
@@ -130,9 +149,14 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
     p->coluna++;
      pacman->nMovimentosDireita++;
     if (EncontrouParedeMapa(mapa, p)) {
-      p->coluna--;
-      pacman->nColisoesParedeDireita++;
-      InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+       if(pacman->contagemMais >= 0 && p->coluna != ObtemNumeroColunasMapa(mapa) - 1){
+        pacman->parede = 1;
+      }
+      else {
+        p->coluna--;
+        pacman->nColisoesParedeDireita++;
+        InsereNovoMovimentoSignificativoPacman(pacman, comando, "colidiu com a parede");
+      }
     } else if (EncontrouComidaMapa(mapa, p)) {
       pacman->nFrutasComidasDireita++;
       InsereNovoMovimentoSignificativoPacman(pacman, comando, "pegou comida");
@@ -146,6 +170,14 @@ void MovePacman(tPacman *pacman, tMapa *mapa, COMANDO comando) {
     AtualizaPosicao(pacman->posicaoAtual, p);
   }
   AtualizaTrilhaPacman(pacman);
+
+  if(ObtemItemMapa(mapa, pacman->posicaoAtual) == 'x')
+    pacman->contagemX = 15;
+
+  if(ObtemItemMapa(mapa, pacman->posicaoAtual) == '&'){
+    pacman->contagemBomba = 3;
+    pacman->bomba = CriaPosicao(ObtemLinhaPosicao(pacman->posicaoAtual), ObtemColunaPosicao(pacman->posicaoAtual));
+  }
 }
 
 void CriaTrilhaPacman(tPacman *pacman, int nLinhas, int nColunas) {
@@ -291,4 +323,67 @@ int ObtemNumeroMovimentosSignificativosPacman(tPacman* pacman){
 
 int ObtemPontuacaoAtualPacman(tPacman* pacman){
   return (pacman->nFrutasComidasBaixo + pacman->nFrutasComidasCima + pacman->nFrutasComidasDireita + pacman->nFrutasComidasEsquerda);
+}
+
+tPosicao* BombaPacman(tPacman *pacman){
+    return pacman->bomba;
+}
+
+int ContagemBomba(tPacman *pacman){
+    return pacman->contagemBomba;
+}
+
+void DiminuiContagemX(tPacman *pacman){
+  if(pacman->contagemX > 0){
+      pacman->contagemX--;
+  }
+}
+
+int ObtemContagemX(tPacman *pacman){
+  return pacman->contagemX;
+}
+
+void DesativaContagemX(tPacman *pacman){
+  pacman->contagemX = -1;
+}
+
+void DiminuiContagemBomba(tPacman *pacman){
+  pacman->contagemBomba--;
+}
+
+int PacmanParede(tPacman *pacman){
+  if(pacman->parede){
+    pacman->parede = 0;
+    return 1;
+  }
+  return 0;
+}
+
+int FazContagemMais(tPacman *pacman, tMapa *mapa, char acao){
+  if(pacman->contagemMais >= 0){
+      pacman->contagemMais++;
+      if(pacman->contagemMais >= 15){
+        if(pacman->parede == 1){
+          if(acao == 'w'){
+            (pacman->nColisoesParedeCima)++;
+          }
+          if(acao == 'd'){
+            (pacman->nColisoesParedeDireita)++;
+          }
+          if(acao == 'a'){
+            (pacman->nColisoesParedeEsquerda)++;
+          }
+          if(acao == 's'){
+            (pacman->nColisoesParedeBaixo)++;
+          }
+          return 0;
+        }
+        pacman->contagemMais = -1;
+      }
+    }
+    return 1;
+}
+
+void ComecaContagemMais(tPacman *pacman){
+  pacman->contagemMais = 0;
 }

@@ -22,7 +22,13 @@ typedef struct tFantasma {
   // qual eh o fantasma
   char tipo;
 
+  //caso o fantasma esteja em cima de uma parede
+  int parede;
+
   int vivo;
+
+  int tunel;
+
 } tFantasma;
 
 // aloca dinamicamente o fantasma e retorna NULL se ele nao existir
@@ -66,6 +72,10 @@ tPosicao* ObtemPosicaoFantasma(tFantasma *F);
 //  \param F fantasma
 void DesalocaFantasma(tFantasma *F);
 
-void ExplodeFantasma(tPosicao *p, tFantasma *F);
+int EstaVivoFantasma(tFantasma *F);
+
+void MataFantasma(tFantasma *F);
+
+int ParedeFantasma(tFantasma *F);
 
 #endif

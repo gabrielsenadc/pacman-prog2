@@ -41,8 +41,12 @@ typedef struct tPacman{
     int nColunasTrilha;
     int** trilha;
 
-    int contagem;
-    tPosicao *bomba;
+    int contagemMais;
+    int parede;
+    int contagemX;
+
+    int contagemBomba;
+    tPosicao* bomba;
 } tPacman;
 
 /**
@@ -272,6 +276,35 @@ int ObtemNumeroMovimentosSignificativosPacman(tPacman* pacman);
  */
 int ObtemPontuacaoAtualPacman(tPacman* pacman);
 
+tPosicao* BombaPacman(tPacman *pacman);
 
+int ContagemBomba(tPacman *pacman);
+
+void DiminuiContagemX(tPacman *pacman);
+
+int ObtemContagemX(tPacman *pacman);
+
+void DesativaContagemX(tPacman *pacman);
+
+void DiminuiContagemBomba(tPacman *pacman);
+
+/**
+ * Retorna se o pacman esta em uma posicao de parede, se estiver, seta parede para 0
+ * 
+ * \param pacman pacman
+ */
+int PacmanParede(tPacman *pacman);
+
+
+/**
+ * Realiza a contagem do simbolo '+', se a contagem acabou e o pacman se encontra em uma posicao de parede: retorna 0
+ * 
+ * \param pacman pacman
+ * \param mapa mapa
+ * \param acao acao
+ */
+int FazContagemMais(tPacman *pacman, tMapa *mapa, char acao);
+
+void ComecaContagemMais(tPacman *pacman);
 
 #endif

@@ -9,6 +9,9 @@ tFantasma *CriaFantasma(tPosicao *posicao, char tipo) {
   F->tipo = tipo;
   F->anterior = CriaPosicao(0, 0);
   F->fruta = 0;
+  F->parede = 0;
+  F->vivo = 1;
+  F->tunel = 0;
   if (tipo == 'P') { // comeca andando para cima
     F->cima = 1;
   }
@@ -21,7 +24,6 @@ tFantasma *CriaFantasma(tPosicao *posicao, char tipo) {
   if (tipo == 'B') { // comeca andando para esquerda
     F->esquerda = 1;
   }
-  F->vivo = 1;
   return F;
 }
 
@@ -30,9 +32,8 @@ void AndaVertical(tFantasma *F, tMapa *mapa) {
   if (F->cima == 1) {                     
     p->linha--;
     if (EncontrouParedeMapa(mapa, p)) { // caso bata com a parede muda de sentido
-
-      F->cima = 0;
-      p->linha += 2;
+        F->cima = 0;
+        p->linha += 2;
     }
     if (EncontrouComidaMapa(mapa, p)) { // caso esteja em cima de uma fruta
       F->fruta = 1;
@@ -49,6 +50,10 @@ void AndaVertical(tFantasma *F, tMapa *mapa) {
     }
     AtualizaPosicao(F->posicao, p);
   }
+  if(ObtemItemMapa(mapa, F->posicao) == '@'){
+    F->tunel = 1;
+  }
+    
   DesalocaPosicao(p); // desaloca a posicao analisada
 }
 
@@ -67,10 +72,47 @@ void AndaHorizontal(tFantasma *F, tMapa *mapa) {
   } else { // anda para direita
     p->coluna++;
     if (EncontrouParedeMapa(mapa, p)) {
-      F->esquerda = 1;
-      p->coluna -= 2;
+        F->esquerda = 1;
+        p->coluna -= 2;
     }
     if (EncontrouComidaMapa(mapa, p)) {
+      F->fruta = 1;
+    }
+    AtualizaPosicao(F->posicao, p);
+  }
+  if(ObtemItemMapa(mapa, F->posicao) == '@')
+    F->tunel = 1;
+  DesalocaPosicao(p);
+}
+
+void AndaEspecial(tFantasma *F, tMapa *mapa){
+  tPosicao *p = ClonaPosicao(F->posicao);
+  if(F->tipo == 'V'){
+    p->linha--;
+    if(EncontrouParedeMapa(mapa, p)){
+      if(p->linha == 0){
+        p->linha = ObtemNumeroLinhasMapa(mapa) - 2;
+      }
+      if(EncontrouParedeMapa(mapa, p)){
+        F->parede = 1;
+      }
+    }
+    if(EncontrouComidaMapa(mapa, p)){
+      F->fruta = 1;
+    }
+    AtualizaPosicao(F->posicao, p);
+  }
+  if(F->tipo == 'H'){
+    p->coluna++;
+    if(EncontrouParedeMapa(mapa, p)){
+      if(p->coluna == ObtemNumeroColunasMapa(mapa) - 1){
+        p->coluna = 1;
+      }
+      if(EncontrouParedeMapa(mapa, p)){
+        F->parede = 1;
+      }
+    }
+    if(EncontrouComidaMapa(mapa, p)){
       F->fruta = 1;
     }
     AtualizaPosicao(F->posicao, p);
@@ -88,38 +130,61 @@ void MoveFantasma(tFantasma *F, tMapa *mapa) {
     if (F->fruta) { // caso estivesse em cima de uma fruta, coloca ela no mapa
       AtualizaItemMapa(mapa, F->posicao, '*');
       F->fruta = 0;
-    } else {
+    } else if(F->parede){
+      AtualizaItemMapa(mapa, F->posicao, '#');
+      F->parede = 0;
+    } else if(F->tunel){
+      AtualizaItemMapa(mapa, F->posicao, '@');
+      F->tunel = 0;
+    }
+    else {
       AtualizaItemMapa(mapa, F->posicao, ' '); // caso nao, coloca um espaco em branco no mapa
     }
+
     if (F->tipo == 'P' || F->tipo == 'I') { // se for o fantasma I ou P, anda verticalmente
       AndaVertical(F, mapa);
     }
     if (F->tipo == 'B' || F->tipo == 'C') { // se for o fantasma C ou B, anda horizontalme
       AndaHorizontal(F, mapa);
     }
-  }
+    if(F->tipo == 'V' || F->tipo == 'H'){
+      AndaEspecial(F, mapa);
+    }
+    }
   }
 }
 
 void Morreu(tFantasma *F, tPacman *pacman, tPosicao *anterior) {
   if (F != NULL) {
     if(F->vivo){
-    if (SaoIguaisPosicao(F->posicao, pacman->posicaoAtual)) { // caso os dois estejam na mesma posicao
-      MataPacman(pacman);
+    if (SaoIguaisPosicao(F->posicao, ObtemPosicaoPacman(pacman))) { // caso os dois estejam na mesma posicao
+      if(ObtemContagemX(pacman) > 0){
+        F->vivo = 0;
+        DesativaContagemX(pacman);
+      }
+      else {
+        MataPacman(pacman);
+      }
     }
     if (anterior != NULL) {
-      if (SaoIguaisPosicao(F->anterior, pacman->posicaoAtual) && SaoIguaisPosicao(F->posicao, anterior)) { // caso eles se cruzaram
+      if (SaoIguaisPosicao(F->anterior, ObtemPosicaoPacman(pacman)) && SaoIguaisPosicao(F->posicao, anterior)) { // caso eles se cruzaram
+      if(ObtemContagemX(pacman) > 0){
+        F->vivo = 0;
+        DesativaContagemX(pacman);
+      }
+      else {
         MataPacman(pacman);
       }
     }
     }
+  }
   }
 }
 
 int TemComida(tMapa *mapa, tFantasma *F, tPacman *pacman) {
   if (F != NULL) {
     if(F->vivo){
-    if (SaoIguaisPosicao(pacman->posicaoAtual, F->posicao)) {
+    if (SaoIguaisPosicao(ObtemPosicaoPacman(pacman), F->posicao)) {
       if (F->fruta == 1) {
         return 1;
       }
@@ -141,12 +206,14 @@ void DesalocaFantasma(tFantasma *F) {
   }
 }
 
-void ExplodeFantasma(tPosicao *p, tFantasma *F){
-  if(F != NULL){
-    if(F->vivo){
-      if(SaoIguaisPosicao(F->posicao, p)){
-        F->vivo = 0;
-      }
-    }
-  }
+int EstaVivoFantasma(tFantasma *F){
+  return F->vivo;
+}
+
+void MataFantasma(tFantasma *F){
+  F->vivo = 0;
+}
+
+int ParedeFantasma(tFantasma *F){
+  return F->parede;
 }
