@@ -1,0 +1,15 @@
+==206193== Memcheck, a memory error detector
+==206193== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==206193== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==206193== Command: Resultados/GabrielSenaDaCunha/tPosicao/prog Resultados/GabrielSenaDaCunha/tPosicao/Casos/15
+==206193== Parent PID: 206192
+==206193== 
+==206193== 
+==206193== HEAP SUMMARY:
+==206193==     in use at exit: 0 bytes in 0 blocks
+==206193==   total heap usage: 22,236 allocs, 22,236 frees, 233,010 bytes allocated
+==206193== 
+==206193== All heap blocks were freed -- no leaks are possible
+==206193== 
+==206193== For lists of detected and suppressed errors, rerun with: -s
+==206193== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

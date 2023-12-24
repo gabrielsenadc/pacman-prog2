@@ -1,0 +1,15 @@
+==190500== Memcheck, a memory error detector
+==190500== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==190500== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==190500== Command: Resultados/GabrielSenaDaCunha/tTunel/prog Resultados/GabrielSenaDaCunha/tTunel/Casos/40
+==190500== Parent PID: 190499
+==190500== 
+==190500== 
+==190500== HEAP SUMMARY:
+==190500==     in use at exit: 0 bytes in 0 blocks
+==190500==   total heap usage: 48,018 allocs, 48,018 frees, 456,047 bytes allocated
+==190500== 
+==190500== All heap blocks were freed -- no leaks are possible
+==190500== 
+==190500== For lists of detected and suppressed errors, rerun with: -s
+==190500== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
