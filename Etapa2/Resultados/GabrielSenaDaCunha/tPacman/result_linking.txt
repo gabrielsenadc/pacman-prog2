@@ -1,0 +1,6 @@
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/tPacman/main.o: in function `VerificaColisaoComFantasma':
+main.c:(.text+0x2027): undefined reference to `ObtemNumeroMovimentosRestantesMatarFantasmaPacman'
+/usr/bin/ld: main.c:(.text+0x2075): undefined reference to `RetiraMataFantasmaPacman'
+/usr/bin/ld: main.c:(.text+0x2144): undefined reference to `ObtemNumeroMovimentosRestantesMatarFantasmaPacman'
+/usr/bin/ld: main.c:(.text+0x218f): undefined reference to `RetiraMataFantasmaPacman'
+collect2: error: ld returned 1 exit status

@@ -1,0 +1,765 @@
+Rodando o script do Aluno - Arquivos header necessários do professor existem na pasta Includes
+ - Arquivos objetos necessários do professor existem na pasta Gabarito-obj.
+#######################################
+ALUNO: GabrielSenaDaCunha
+#######################################
+CRIANDO O DIRETÓRIO DE RESULTADO PARA GabrielSenaDaCunha:
+ - Diretório Resultados/GabrielSenaDaCunha criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/tPacman criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/tMapa criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/tMovimento criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/tTunel criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/tPosicao criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/completo criado com sucesso!
+ - Diretório Resultados/GabrielSenaDaCunha/main criado com sucesso!
+ - Arquivos criados: ok!
+
+CHECKANDO OS ARQUIVOS DO ALUNO:
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tPacman.c' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tPacman.h' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tMapa.c' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tMapa.h' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tMovimento.c' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tMovimento.h' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tTunel.c' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tTunel.h' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tPosicao.c' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/tPosicao.h' encontrado!
+ - Arquivo esperado 'Respostas/GabrielSenaDaCunha/main.c' encontrado!
+ - Arquivos esperados enviados: Ok!
+
+COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
+ - Pasta tPacman:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Pasta tMapa:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Pasta tMovimento:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Pasta tTunel:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Pasta tPosicao:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando os 'Respostas/GabrielSenaDaCunha/src_file_name.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Pasta completo:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/completo
+ - Copiando os 'Respostas/GabrielSenaDaCunha/*.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/completo
+ - Copiando os 'Respostas/GabrielSenaDaCunha/*.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/completo
+ - Pasta main:
+ - Copiando os Casos de teste para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando os 'Respostas/GabrielSenaDaCunha/*.h' do aluno para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando os 'Respostas/GabrielSenaDaCunha/*.c' do aluno para a pasta Resultados/GabrielSenaDaCunha/main
+ - Arquivos copiados: ok!
+
+COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:
+ - Copiando os arquivos objetos do professor para cada subpasta do Resultado do GabrielSenaDaCunha:
+ - Copiando o Gabarito-obj/tPacman.o para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando o Gabarito-obj/tPacman.o para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando o Gabarito-obj/tPacman.o para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando o Gabarito-obj/tPacman.o para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando o Gabarito-obj/tPacman.o para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando o Gabarito-obj/tMapa.o para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando o Gabarito-obj/tMapa.o para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando o Gabarito-obj/tMapa.o para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando o Gabarito-obj/tMapa.o para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando o Gabarito-obj/tMapa.o para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando o Gabarito-obj/tMovimento.o para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando o Gabarito-obj/tMovimento.o para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando o Gabarito-obj/tMovimento.o para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando o Gabarito-obj/tMovimento.o para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando o Gabarito-obj/tMovimento.o para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando o Gabarito-obj/tTunel.o para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando o Gabarito-obj/tTunel.o para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando o Gabarito-obj/tTunel.o para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando o Gabarito-obj/tTunel.o para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Copiando o Gabarito-obj/tTunel.o para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando o Gabarito-obj/tPosicao.o para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando o Gabarito-obj/tPosicao.o para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando o Gabarito-obj/tPosicao.o para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando o Gabarito-obj/tPosicao.o para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando o Gabarito-obj/tPosicao.o para a pasta Resultados/GabrielSenaDaCunha/main
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/GabrielSenaDaCunha/tPacman
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/GabrielSenaDaCunha/tMapa
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/GabrielSenaDaCunha/tMovimento
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/GabrielSenaDaCunha/tTunel
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/GabrielSenaDaCunha/tPosicao
+ - Arquivos Compilados: ok!
+
+LINKANDO OS ARQUIVOS COMPILADOS:
+ - Pasta tPacman:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tPacman/*.o
+ - Arquivos Linkados: Erro! Binário prog não gerado.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPacman/result_linking.txt
+ - Pasta tMapa:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tMapa/*.o
+ - Arquivos Linkados: Erro! Binário prog não gerado.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMapa/result_linking.txt
+ - Pasta tMovimento:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tMovimento/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/result_linking.txt
+ - Pasta tTunel:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tTunel/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/result_linking.txt
+ - Pasta tPosicao:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tPosicao/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/result_linking.txt
+ - Pasta completo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) completo/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/result_linking.txt
+ - Pasta main:
+ - Gerando o binário prog linkando com o(s) arquivo(s) main/*.o
+ - Arquivos Linkados: Erro! Binário prog não gerado.
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/main/result_linking.txt
+ - Arquivos Linkados: Erro! 3 arquivos com erros de linkagem.
+
+EXECUTANDO O VALGRIND EM CADA CASO:
+ - Pasta tPacman / Caso 1:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/1/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/1/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/1/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/1/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/1/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 10:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/10/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/10/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/10/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/10/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/10/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 2:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/2/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/2/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/2/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/2/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/2/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 3:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/3/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/3/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/3/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/3/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/3/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 4:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/4/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/4/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/4/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/4/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/4/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 5:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/5/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/5/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/5/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/5/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/5/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 6:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/6/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/6/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/6/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/6/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/6/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 7:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/7/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/7/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/7/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/7/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/7/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 8:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/8/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/8/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/8/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/8/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/8/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tPacman / Caso 9:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/9/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/9/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/9/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/9/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tPacman/Casos/9/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 1:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/1/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/1/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/1/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/1/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/1/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 10:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/10/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/10/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/10/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/10/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/10/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 2:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/2/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/2/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/2/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/2/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/2/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 3:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/3/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/3/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/3/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/3/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/3/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 4:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/4/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/4/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/4/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/4/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/4/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 5:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/5/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/5/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/5/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/5/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/5/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 6:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/6/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/6/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/6/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/6/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/6/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 7:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/7/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/7/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/7/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/7/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/7/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 8:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/8/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/8/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/8/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/8/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/8/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMapa / Caso 9:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/9/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/9/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/9/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/9/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/tMapa/Casos/9/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta tMovimento / Caso 1:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 4,655, frees: 4,655, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 10:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 3,702, frees: 3,702, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 2:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2,149, frees: 2,149, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 3:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2,276, frees: 2,276, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 4:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,538, frees: 8,538, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 5:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,594, frees: 5,594, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 6:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,567, frees: 5,567, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 7:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,804, frees: 8,804, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 8:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6,504, frees: 6,504, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tMovimento / Caso 9:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tMovimento/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,104, frees: 5,104, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 1:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 4,655, frees: 4,655, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 10:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 3,702, frees: 3,702, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 2:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2,149, frees: 2,149, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 3:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2,276, frees: 2,276, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 4:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,538, frees: 8,538, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 5:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,594, frees: 5,594, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 6:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,567, frees: 5,567, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 7:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,804, frees: 8,804, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 8:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6,504, frees: 6,504, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tTunel / Caso 9:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tTunel/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,104, frees: 5,104, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 1:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 4,655, frees: 4,655, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 10:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 3,702, frees: 3,702, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 2:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2,149, frees: 2,149, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 3:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2,276, frees: 2,276, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 4:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,538, frees: 8,538, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 5:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,594, frees: 5,594, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 6:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,567, frees: 5,567, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 7:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,804, frees: 8,804, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 8:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6,504, frees: 6,504, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta tPosicao / Caso 9:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/tPosicao/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,104, frees: 5,104, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 1:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 4,169, frees: 4,169, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 10:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 3,274, frees: 3,274, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 2:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 1,820, frees: 1,820, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 3:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 1,942, frees: 1,942, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 4:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 7,967, frees: 7,967, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 5:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,173, frees: 5,173, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Incorreto!
+ - Pasta completo / Caso 6:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,127, frees: 5,127, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 7:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 8,020, frees: 8,020, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 8:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 5,915, frees: 5,915, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta completo / Caso 9:
+ - Arquivo de output gerado: Resultados/GabrielSenaDaCunha/completo/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 4,587, frees: 4,587, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o estatisticas.txt: Ok! Peso: 0.0
+ - Resultado para o inicializacao.txt: Ok! Peso: 0.0
+ - Resultado para o ranking.txt: Ok! Peso: 0.0
+ - Resultado para o resumo.txt: Ok! Peso: 0.0
+ - Resultado para o saida.txt: Ok! Peso: 10.0
+ - Resultado para o trilha.txt: Ok! Peso: 0.0
+ - Pasta main / Caso 1:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/1/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/1/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/1/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/1/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/1/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 10:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/10/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/10/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/10/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/10/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/10/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 2:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/2/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/2/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/2/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/2/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/2/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 3:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/3/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/3/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/3/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/3/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/3/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 4:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/4/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/4/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/4/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/4/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/4/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 5:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/5/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/5/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/5/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/5/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/5/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 6:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/6/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/6/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/6/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/6/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/6/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 7:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/7/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/7/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/7/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/7/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/7/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 8:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/8/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/8/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/8/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/8/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/8/saida/trilha.txt, considerando resultado incorreto!
+ - Pasta main / Caso 9:
+ - Valgrind: Incorreto! Verifique se o binário prog foi gerado corretamente. Ou se o Valgrind está instalado.
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/9/saida/estatisticas.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/9/saida/inicializacao.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/9/saida/ranking.txt, considerando resultado incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/9/saida/resumo.txt, considerando resultado incorreto!
+ - Resultado para o saida.txt: Incorreto!
+ - O aluno não gerou o arquivo de saída Resultados/GabrielSenaDaCunha/main/Casos/9/saida/trilha.txt, considerando resultado incorreto!
+
+#######################################
+RESULTADOS FINAIS
+#######################################
+
+----------------------------------------------------------------------------
+Nome 0: GabrielSenaDaCunha
+ - Resumo dos Resultados:
+ - Resumo das Compilações: 7 compilações corretas de 7 no total
+ - Resumo das Linkagens: 4 linkagens corretas de 7 no total
+ - Valgrinds Corretos tPacman: 0 valgrinds corretos de 10 (teve desconto na nota para a pasta tPacman, olhar detalhamento nos prints acima!)
+ - Valgrinds Corretos tMapa: 0 valgrinds corretos de 10 (teve desconto na nota para a pasta tMapa, olhar detalhamento nos prints acima!)
+ - Valgrinds Corretos tMovimento: 10 valgrinds corretos de 10 (não teve desconto na nota)
+ - Valgrinds Corretos tTunel: 10 valgrinds corretos de 10 (não teve desconto na nota)
+ - Valgrinds Corretos tPosicao: 10 valgrinds corretos de 10 (não teve desconto na nota)
+ - Valgrinds Corretos completo: 10 valgrinds corretos de 10 (não teve desconto na nota)
+ - Valgrinds Corretos main: 0 valgrinds corretos de 10 (teve desconto na nota para a pasta main, olhar detalhamento nos prints acima!)
+ - Cômputo final das Notas:
+ - Pasta tPacman (peso 0.0): 0 resultados corretos de 60 / Nota 0
+ - Pasta tMapa (peso 0.0): 0 resultados corretos de 60 / Nota 0
+ - Pasta tMovimento (peso 0.0): 60 resultados corretos de 60 / Nota 0
+ - Pasta tTunel (peso 0.0): 60 resultados corretos de 60 / Nota 0
+ - Pasta tPosicao (peso 0.0): 60 resultados corretos de 60 / Nota 0
+ - Pasta completo (peso 10.0): 59 resultados corretos de 60 / Nota 10.00
+ - Pasta main (peso 0.0): 0 resultados corretos de 60 / Nota 0
+ - Nota Final GabrielSenaDaCunha: 10.00
+
+----------------------------------------------------------------------------
+
+Arquivo CSV Resultado.csv com os resultados finais foi gerado na pasta raíz!
+
+

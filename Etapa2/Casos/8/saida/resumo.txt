@@ -1,0 +1,4 @@
+Movimento 16 (d) pegou comida
+Movimento 17 (d) pegou comida
+Movimento 18 (d) pegou comida
+Movimento 21 (d) fim de jogo por encostar em um fantasma

@@ -1,0 +1,5 @@
+Movimento 8 (w) pegou comida
+Movimento 9 (w) pegou comida
+Movimento 10 (a) pegou comida
+Movimento 11 (a) pegou comida
+Movimento 11 (a) fim de jogo por encostar em um fantasma

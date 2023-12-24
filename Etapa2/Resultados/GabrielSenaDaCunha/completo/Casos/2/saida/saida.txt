@@ -1,0 +1,156 @@
+Estado do jogo apos o movimento 's':
+##############
+##  #####   C#
+# >          #
+#    H####   #
+#            #
+#   ##V##    #
+#I         * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 's':
+##############
+##  #####  C #
+#            #
+# >  #H###   #
+#     V      #
+#I  #####    #
+#          * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 's':
+##############
+##  ##### C  #
+#            #
+#    #VH##   #
+#I>          #
+#   #####    #
+#          * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 's':
+##############
+##  #####C   #
+#     V      #
+#I   ###H#   #
+#            #
+# > #####    #
+#          * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 's':
+##############
+##  ##V## C  #
+#I           #
+#    ####H   #
+#            #
+#   #####    #
+# >        * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####  C #
+#            #
+#I   #####H  #
+#            #
+#   #####    #
+#  >  V    * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####   C#
+#            #
+#    ##### H #
+#I           #
+#   ##V##    #
+#   >      * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####  C #
+#            #
+#    #####  H#
+#     V      #
+#I  #####    #
+#    >     * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  ##### C  #
+#            #
+#H   #V###   #
+#            #
+#   #####    #
+#I    >    * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####C   #
+#     V      #
+# H  #####   #
+#            #
+#I  #####    #
+#      >   * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  ##V## C  #
+#            #
+#  H #####   #
+#I           #
+#   #####    #
+#       >  * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####  C #
+#            #
+#I  H#####   #
+#            #
+#   #####    #
+#     V  > * #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####   C#
+#I           #
+#    H####   #
+#            #
+#   ##V##    #
+#         >* #
+##############
+Pontuacao: 0
+
+Estado do jogo apos o movimento 'd':
+##############
+##  #####  C #
+#            #
+#I   #H###   #
+#     V      #
+#   #####    #
+#          > #
+##############
+Pontuacao: 1
+
+Voce venceu!
+Pontuacao final: 1

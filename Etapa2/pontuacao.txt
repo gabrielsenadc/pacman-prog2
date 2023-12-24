@@ -1,0 +1,16 @@
+estatisticas.txt=0.0
+inicializacao.txt=0.0
+ranking.txt=0.0
+resumo.txt=0.0
+saida.txt=10.0
+trilha.txt=0.0
+
+tPacman.h=0.0
+tMapa.h=0.0
+tMovimento.h=0.0
+tTunel.h=0.0
+tPosicao.h=0.0
+completo=10.0
+main=0.0
+
+valgrind=0.3

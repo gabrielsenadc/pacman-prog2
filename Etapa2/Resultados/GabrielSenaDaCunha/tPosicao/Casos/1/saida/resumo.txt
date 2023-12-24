@@ -1,0 +1,3 @@
+Movimento 11 (w) pegou comida
+Movimento 14 (d) pegou comida
+Movimento 18 (a) pegou comida

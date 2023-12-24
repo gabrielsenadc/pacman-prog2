@@ -1,0 +1,28 @@
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/main/main.o: in function `main':
+main.c:(.text+0xd8f): undefined reference to `ComecaContagemMais'
+/usr/bin/ld: main.c:(.text+0xe54): undefined reference to `PacmanParede'
+/usr/bin/ld: main.c:(.text+0xec0): undefined reference to `PacmanParede'
+/usr/bin/ld: main.c:(.text+0xf27): undefined reference to `DiminuiContagemX'
+/usr/bin/ld: main.c:(.text+0x13a4): undefined reference to `ContagemBomba'
+/usr/bin/ld: main.c:(.text+0x13bb): undefined reference to `ContagemBomba'
+/usr/bin/ld: main.c:(.text+0x13cf): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x13f8): undefined reference to `ContagemBomba'
+/usr/bin/ld: main.c:(.text+0x140c): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x1435): undefined reference to `ContagemBomba'
+/usr/bin/ld: main.c:(.text+0x1449): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x1472): undefined reference to `ContagemBomba'
+/usr/bin/ld: main.c:(.text+0x1489): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x14a3): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x14f6): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x150f): undefined reference to `BombaPacman'
+/usr/bin/ld: main.c:(.text+0x1562): undefined reference to `BombaPacman'
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/main/main.o:main.c:(.text+0x157c): more undefined references to `BombaPacman' follow
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/main/main.o: in function `main':
+main.c:(.text+0x186f): undefined reference to `DiminuiContagemBomba'
+/usr/bin/ld: main.c:(.text+0x1a3c): undefined reference to `FazContagemMais'
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/main/tFantasma.o: in function `Morreu':
+tFantasma.c:(.text+0x714): undefined reference to `ObtemContagemX'
+/usr/bin/ld: tFantasma.c:(.text+0x72f): undefined reference to `DesativaContagemX'
+/usr/bin/ld: tFantasma.c:(.text+0x790): undefined reference to `ObtemContagemX'
+/usr/bin/ld: tFantasma.c:(.text+0x7ab): undefined reference to `DesativaContagemX'
+collect2: error: ld returned 1 exit status

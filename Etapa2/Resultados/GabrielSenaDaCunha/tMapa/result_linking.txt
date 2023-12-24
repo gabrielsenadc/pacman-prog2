@@ -1,0 +1,5 @@
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/tMapa/main.o: in function `ExecutaJogo':
+main.c:(.text+0x263a): undefined reference to `DecrementaContagemRegressivaBombaMapa'
+/usr/bin/ld: Resultados/GabrielSenaDaCunha/tMapa/tPacman.o: in function `MovePacman':
+tPacman.c:(.text+0xd33): undefined reference to `AtivaBombaMapa'
+collect2: error: ld returned 1 exit status
